@@ -1,0 +1,191 @@
+/* ------------------------------------------------------------------ */
+/* Landing hero                                                        */
+/* ------------------------------------------------------------------ */
+
+:root {
+    --landing-green: #3ba876;
+}
+
+.landing-hero {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+}
+
+.landing-hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--landing-green);
+}
+
+.landing-hero-title {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 3.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+}
+
+.landing-hero-highlight {
+    color: var(--landing-green);
+}
+
+.landing-hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+}
+
+.landing-hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+}
+
+.landing-hero-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.9rem 1.75rem;
+    border-radius: var(--radius-md);
+}
+
+/* ------------------------------------------------------------------ */
+/* Landing hero panel (app preview)                                    */
+/* ------------------------------------------------------------------ */
+
+.landing-hero-panel {
+    width: 100%;
+    max-width: 960px;
+    background: var(--paper-warm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    text-align: left;
+}
+
+.landing-hero-panel-dots {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.landing-hero-panel-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.landing-hero-panel-dot-red { background: #ef7161; }
+.landing-hero-panel-dot-yellow { background: #f0b94d; }
+.landing-hero-panel-dot-green { background: #7fce9e; }
+
+.landing-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.landing-hero-stat {
+    background: var(--paper-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.landing-hero-stat-label {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+}
+
+.landing-hero-stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.landing-hero-stat-delta {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.landing-hero-stat-delta-negative { color: var(--danger); }
+.landing-hero-stat-delta-positive { color: var(--landing-green); }
+.landing-hero-stat-delta-neutral { color: var(--ink-faint); }
+
+.landing-hero-categories {
+    background: var(--paper-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.landing-hero-cat-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.landing-hero-cat-label {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+}
+
+.landing-hero-cat-track {
+    height: 10px;
+    background: var(--border-soft);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.landing-hero-cat-bar {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.landing-hero-cat-bar-food { background: #e79a3d; }
+.landing-hero-cat-bar-travel { background: #4d80d6; }
+.landing-hero-cat-bar-bills { background: #7b6fce; }
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 700px) {
+    .landing-hero-stats { grid-template-columns: 1fr; }
+    .landing-hero-actions { flex-direction: column; width: 100%; max-width: 320px; }
+    .landing-hero-btn { text-align: center; }
+}
