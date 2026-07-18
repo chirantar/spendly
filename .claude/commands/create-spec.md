@@ -25,9 +25,14 @@ From `$ARGUMENTS`, work out:
 - **branch_name** — inferred short kebab-case branch name for the feature
   (e.g. `feature/07-add-expense-form`)
 
-### 3. Check the branch name isn't already taken
+### 3. Check whether you're already on the target branch
 
-Run `git branch --list <branch_name>` (and check remotes with
+Run `git branch --show-current`. If it already equals `<branch_name>`,
+skip straight to step 5 — you're already on the right branch, do not
+switch, pull, or create anything.
+
+Otherwise, check the branch name isn't already taken: run
+`git branch --list <branch_name>` (and check remotes with
 `git branch -r --list origin/<branch_name>` if useful). If it already
 exists, stop and tell the user the branch name is taken — suggest they
 pick a different feature name or delete/reuse the existing branch. Do not
@@ -35,7 +40,7 @@ proceed to step 4.
 
 ### 4. Switch, pull, and create the branch
 
-- `git checkout main`
+- `git checkout master`
 - `git pull`
 - `git checkout -b <branch_name>`
 
